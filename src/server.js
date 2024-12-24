@@ -56,7 +56,7 @@ io.on('connection', (socket) => {
     // Utiliser userId au lieu de socket.id
     const messageWithUserId = {
       ...message,
-      user: socket.userId // Utiliser l'ID persistant
+      user: socket.userId, // Utiliser l'ID persistant
     }
     roomMessages.get(room).push(messageWithUserId)
     io.to(room).emit('messageReceived', { message: messageWithUserId })

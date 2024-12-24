@@ -127,7 +127,7 @@ const getUserId = () => {
 }
 
 const userId = getUserId()
-const socket = io('http://localhost:3001', {
+const socket = io(import.meta.env.VITE_SOCKET_URL, {
   auth: {
     userId: userId, // Envoyer l'ID utilisateur au serveur lors de la connexion
   },
