@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "start": "npm run dev:server & npm run dev",
     "dev": "vite",
     "dev:server": "node src/server.js",
     "build": "run-p type-check \"build-only {@}\" --",
