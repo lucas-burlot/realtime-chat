@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "npm run dev:server & npm run dev",
+    "start": "concurrently \"npm run dev:server\" \"npm run dev\"",
     "dev": "vite",
     "dev:server": "node src/server.js",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -15,6 +15,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "concurrently": "^9.1.0",
     "express": "^4.21.2",
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
